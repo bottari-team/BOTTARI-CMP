@@ -23,19 +23,24 @@ class BottariFeatureImplPlugin : Plugin<Project> {
             apply<KmpIosPlugin>()
             apply<KmpComposePlugin>()
             apply<KotlinSerializationPlugin>()
+            pluginManager.apply("dev.zacsweers.metro")
 
             kotlin {
                 with(sourceSets) {
                     commonMain.dependencies {
-//                        implementation(project(":core:ui"))
-//                        implementation(project(":core:designsystem"))
-//                        implementation(project(":core:model"))
-//                        implementation(project(":core:common"))
-//                        implementation(project(":core:domain"))
+                        implementation(project(":core:di"))
+                        implementation(project(":core:ui"))
+                        implementation(project(":core:designsystem"))
+                        implementation(project(":core:model"))
+                        implementation(project(":core:common"))
+                        implementation(project(":core:domain"))
 
                         implementation(libs.library("navigation3"))
                         implementation(libs.library("kotlinx-serialization-json"))
                         implementation(libs.library("kotlinx-datetime"))
+
+                        implementation(libs.library("androidx-lifecycle-runtime-compose"))
+                        implementation(libs.library("androidx-lifecycle-viewmodel-compose"))
                     }
                 }
             }

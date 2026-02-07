@@ -15,6 +15,7 @@ class AndroidApplicationPlugin : Plugin<Project> {
         with(target) {
             with(pluginManager) {
                 apply("com.android.application")
+                apply("dev.zacsweers.metro")
             }
             androidApplication {
                 android {
@@ -49,6 +50,10 @@ class AndroidApplicationPlugin : Plugin<Project> {
 
                     buildTypes {
                         getByName("release") {
+                            isMinifyEnabled = true
+                        }
+
+                        getByName("debug") {
                             isMinifyEnabled = false
                         }
                     }

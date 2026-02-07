@@ -23,18 +23,17 @@ class KmpComposePlugin : Plugin<Project> {
             kotlin {
                 with(sourceSets) {
                     commonMain.dependencies {
-                        implementation("org.jetbrains.compose.runtime:runtime:1.10.0")
-                        implementation("org.jetbrains.compose.foundation:foundation:1.10.0")
-                        implementation("org.jetbrains.compose.material3:material3:1.9.0")
-                        implementation("org.jetbrains.compose.material:material-icons-extended:1.7.3")
-                        implementation("org.jetbrains.compose.ui:ui:1.10.0")
-                        implementation("org.jetbrains.compose.components:components-resources:1.10.0")
-                        implementation("org.jetbrains.compose.ui:ui-tooling-preview:1.10.0")
+                        implementation(libs.library("compose-runtime"))
+                        implementation(libs.library("compose-foundation"))
+                        implementation(libs.library("compose-ui"))
+                        implementation(libs.library("compose-ui-tooling-preview"))
+                        implementation(libs.library("compose-components-resources"))
                         implementation(libs.library("compose-material3"))
+                        implementation("org.jetbrains.compose.material:material-icons-extended:1.7.3")
                     }
                     find { it.name == "androidMain" }?.apply {
                         dependencies {
-                            implementation("org.jetbrains.compose.ui:ui-tooling-preview:1.10.0")
+                            implementation(libs.library("compose-ui-tooling"))
                         }
                     }
                 }

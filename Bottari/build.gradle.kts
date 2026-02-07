@@ -7,4 +7,6 @@ plugins {
     alias(libs.plugins.jetbrainsKotlinJvm) apply false
     alias(libs.plugins.spotless) apply false
     alias(libs.plugins.detekt) apply false
+    alias(libs.plugins.metro) apply false
+    alias(libs.plugins.gms) apply false
 }

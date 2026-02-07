@@ -50,6 +50,7 @@ internal fun Project.setupDetekt(extension: DetektExtension) {
                 output.set(rootProject.layout.buildDirectory.file("reports/detekt/merge.xml"))
             }
         } else {
+            @Suppress("UNCHECKED_CAST")
             rootProject.tasks.named("reportMerge") as TaskProvider<ReportMergeTask>
         }
 
