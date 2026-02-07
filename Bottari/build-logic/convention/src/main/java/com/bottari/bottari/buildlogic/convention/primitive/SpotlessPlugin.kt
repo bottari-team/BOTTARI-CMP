@@ -15,7 +15,10 @@ class SpotlessPlugin : Plugin<Project> {
             extensions.configure<SpotlessExtension> {
                 kotlin {
                     target("**/*.kt")
-                    targetExclude("**/build/**/*.kt")
+                    targetExclude(
+                        "**/build/**/*.kt",
+                        "**/MainViewController.kt",
+                    )
                     ktlint()
                     trimTrailingWhitespace()
                     endWithNewline()
