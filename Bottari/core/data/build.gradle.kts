@@ -14,8 +14,9 @@ kotlin {
             implementation(projects.core.di)
             implementation(projects.core.domain)
             implementation(projects.core.model)
-            implementation(projects.core.datastore)
-            implementation(projects.core.network)
+
+            api(projects.core.datastore)
+            api(projects.core.network)
 
             implementation(libs.ktor.client.core)
             implementation(libs.kotlinx.coroutines.core)

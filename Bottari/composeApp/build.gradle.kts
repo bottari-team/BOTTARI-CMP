@@ -34,7 +34,6 @@ kotlin {
         commonMain.dependencies {
             implementation(projects.core.di)
             implementation(projects.core.data)
-            implementation(projects.core.datastore)
             implementation(projects.core.domain)
 
             implementation(libs.androidx.lifecycle.runtime.compose)
