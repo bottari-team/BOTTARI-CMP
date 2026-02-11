@@ -8,13 +8,12 @@ minSdk = "28"
 
 agp = "8.11.2"
 kotlin = "2.3.10"
-jetbrainsKotlinJvm = "2.3.0"
 
 kotlinx-coroutines = "1.10.2"
 kotlinx-datetime = "0.7.1"
 kotlinx-serialization = "1.10.0"
 
-androidx-activity = "1.12.3"
+androidx-activity = "1.12.4"
 androidx-core = "1.17.0"
 androidx-espresso = "3.7.0"
 androidx-lifecycle = "2.9.6"
@@ -30,9 +29,9 @@ compose-multiplatform-lifecycle = "2.10.0-alpha08"
 
 napier = "2.7.1"
 buildkonfig = "0.17.1"
-
 ksp = "2.3.4"
 metro = "0.10.2"
+
 spotless = "8.2.1"
 detekt = "1.23.8"
 twitterComposeRule = "0.0.26"
@@ -85,7 +84,6 @@ ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negoti
 ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor" }
 ktor-client-logging = { module = "io.ktor:ktor-client-logging", version.ref = "ktor" }
 ktorfit = { module = "de.jensklingenberg.ktorfit:ktorfit-lib", version.ref = "ktorfit" }
-ktorfit-ksp = { module = "de.jensklingenberg.ktorfit:ktorfit-ksp", version.ref = "ktorfit" }
 
 # Firebase
 firebase-installations = { group = "dev.gitlive", name = "firebase-installations", version.ref = "gitlive" }
@@ -109,7 +107,6 @@ twitterComposeRule = { module = "com.twitter.compose.rules:detekt", version.ref 
 buildkonfigGradlePlugin = { module = "com.codingfeline.buildkonfig:buildkonfig-gradle-plugin", version.ref = "buildkonfig" }
 
 [plugins]
-jetbrainsKotlinJvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "jetbrainsKotlinJvm" }
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 androidLibrary = { id = "com.android.library", version.ref = "agp" }
 kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
