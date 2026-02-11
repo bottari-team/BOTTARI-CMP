@@ -1,4 +1,4 @@
-package com.bottari.bottari.core.network
+package com.bottari.bottari.core.network.util
 
 import dev.gitlive.firebase.Firebase
 import dev.gitlive.firebase.installations.installations

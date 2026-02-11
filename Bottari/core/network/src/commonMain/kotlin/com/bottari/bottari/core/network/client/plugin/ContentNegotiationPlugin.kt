@@ -9,8 +9,6 @@ import io.ktor.serialization.kotlinx.json.json
 import kotlinx.serialization.json.Json
 
 internal fun HttpClientConfig<*>.installContentNegotiation() {
-    expectSuccess = true
-
     defaultRequest {
         contentType(type = ContentType.Application.Json)
     }

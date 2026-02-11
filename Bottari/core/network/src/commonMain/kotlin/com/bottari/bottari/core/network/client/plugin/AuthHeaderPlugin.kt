@@ -1,6 +1,6 @@
 package com.bottari.bottari.core.network.client.plugin
 
-import com.bottari.bottari.core.network.FirebaseInstallationIdProvider
+import com.bottari.bottari.core.network.util.FirebaseInstallationIdProvider
 import io.ktor.client.HttpClientConfig
 import io.ktor.client.plugins.api.createClientPlugin
 import io.ktor.client.request.HttpRequestBuilder

@@ -9,6 +9,7 @@ plugins {
     id("bottari.convention.kmp.ios")
     id("bottari.convention.buildkonfig")
     id("dev.zacsweers.metro")
+    id("com.google.devtools.ksp")
 }
 
 android.namespace = "com.bottari.bottari.core.network"
@@ -39,6 +40,7 @@ kotlin {
     sourceSets {
         commonMain.dependencies {
             implementation(projects.core.di)
+            implementation(projects.core.model)
 
             implementation(libs.ktor.client.core)
             implementation(libs.ktor.client.content.negotiation)
@@ -47,6 +49,7 @@ kotlin {
             implementation(libs.ktorfit)
 
             implementation(libs.firebase.installations)
+            implementation(libs.firebase.messaging)
         }
 
         androidMain.dependencies {
@@ -57,4 +60,8 @@ kotlin {
             implementation(libs.ktor.client.darwin)
         }
     }
+}
+
+dependencies {
+    add("kspCommonMainMetadata", libs.ktorfit.ksp)
 }
