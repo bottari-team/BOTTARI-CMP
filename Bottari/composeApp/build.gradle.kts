@@ -38,12 +38,12 @@ kotlin {
 
             implementation(libs.androidx.lifecycle.runtime.compose)
             implementation(libs.androidx.lifecycle.viewmodel.compose)
-            implementation("dev.zacsweers.metro:metrox-viewmodel-compose:0.10.2")
+            implementation(libs.metrox.viewmodel.compose)
         }
 
         androidMain.dependencies {
             implementation(libs.androidx.activity.compose)
-            implementation("dev.zacsweers.metro:metrox-android:0.10.2")
+            implementation(libs.metrox.android)
         }
     }
 }
