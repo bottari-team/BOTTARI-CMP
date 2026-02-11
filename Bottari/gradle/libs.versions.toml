@@ -79,7 +79,6 @@ navigation3 = { module = "org.jetbrains.androidx.navigation3:navigation3-ui", ve
 navigation3-lifecycle-viewmodel = { module = "org.jetbrains.androidx.lifecycle:lifecycle-viewmodel-navigation3", version.ref = "compose-multiplatform-lifecycle" }
 
 # Network
-ktor-client-core = { group = "io.ktor", name = "ktor-client-core", version.ref = "ktor" }
 ktor-client-darwin = { group = "io.ktor", name = "ktor-client-darwin", version.ref = "ktor" }
 ktor-client-okhttp = { group = "io.ktor", name = "ktor-client-okhttp", version.ref = "ktor" }
 ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor" }
@@ -121,6 +120,7 @@ spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
 detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
 metro = { id = "dev.zacsweers.metro", version.ref = "metro" }
 gms = { id = "com.google.gms.google-services", version.ref = "gms" }
+ktrofit = { id = "de.jensklingenberg.ktorfit", version.ref = "ktorfit" }
 
 [bundles]
 plugins = [

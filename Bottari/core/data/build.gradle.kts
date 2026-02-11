@@ -16,9 +16,6 @@ kotlin {
 
             api(projects.core.datastore)
             api(projects.core.network)
-
-            implementation(libs.ktor.client.core)
-            implementation(libs.kotlinx.coroutines.core)
         }
     }
 }

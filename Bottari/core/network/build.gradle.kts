@@ -10,6 +10,7 @@ plugins {
     id("bottari.convention.buildkonfig")
     id("dev.zacsweers.metro")
     id("com.google.devtools.ksp")
+    id("de.jensklingenberg.ktorfit")
 }
 
 android.namespace = "com.bottari.bottari.core.network"
@@ -36,12 +37,15 @@ buildkonfig {
     }
 }
 
+ktorfit {
+    compilerPluginVersion.set("2.3.3")
+}
+
 kotlin {
     sourceSets {
         commonMain.dependencies {
             implementation(projects.core.model)
 
-            implementation(libs.ktor.client.core)
             implementation(libs.ktor.client.content.negotiation)
             implementation(libs.ktor.client.logging)
             implementation(libs.ktor.serialization.kotlinx.json)
@@ -62,5 +66,5 @@ kotlin {
 }
 
 dependencies {
-    add("kspCommonMainMetadata", libs.ktorfit.ksp)
+    kspCommonMainMetadata(libs.ktorfit.ksp)
 }
