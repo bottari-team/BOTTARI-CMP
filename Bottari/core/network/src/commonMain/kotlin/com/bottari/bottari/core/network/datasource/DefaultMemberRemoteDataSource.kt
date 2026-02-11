@@ -13,7 +13,7 @@ import dev.zacsweers.metro.Inject
 class DefaultMemberRemoteDataSource(
     private val memberService: MemberService,
 ) : MemberRemoteDataSource {
-    override suspend fun registerMember(request: MemberRegisterRequest): Result<Long?> =
+    override suspend fun registerMember(request: MemberRegisterRequest): Result<Long> =
         requestResponse {
             memberService.registerMember(request)
         }.mapCatching { response -> response.extractIdFromHeader() }

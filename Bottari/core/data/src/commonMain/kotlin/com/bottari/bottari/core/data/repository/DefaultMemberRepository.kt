@@ -19,16 +19,14 @@ class DefaultMemberRepository(
     private val fidProvider: FirebaseInstallationIdProvider,
     private val fcmTokenProvider: FcmTokenProvider,
 ) : MemberRepository {
-    override suspend fun registerMember(): Result<Long?> {
-        val fid = fidProvider.getInstallationId()
-        val fcmToken = fcmTokenProvider.getToken()
-        return dataSource.registerMember(
-            MemberRegisterRequest(
-                ssaid = fid,
-                fcmToken = fcmToken,
-            ),
-        )
-    }
+    override suspend fun registerMember(): Result<Long> =
+        runCatching {
+            val fid = fidProvider.getInstallationId()
+            val fcmToken = fcmTokenProvider.getToken()
+            MemberRegisterRequest(ssaid = fid, fcmToken = fcmToken)
+        }.mapCatching { request ->
+            dataSource.registerMember(request).getOrThrow()
+        }
 
     override suspend fun saveMemberNickname(nickname: Nickname): Result<Unit> =
         dataSource.saveMemberNickname(MemberNicknameSaveRequest.fromDomain(nickname))
