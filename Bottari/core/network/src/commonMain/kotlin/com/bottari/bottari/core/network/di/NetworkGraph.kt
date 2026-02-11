@@ -1,23 +1,24 @@
 package com.bottari.bottari.core.network.di
 
-import com.bottari.bottari.core.di.DataScope
 import com.bottari.bottari.core.network.BuildKonfig
-import com.bottari.bottari.core.network.util.FirebaseInstallationIdProvider
 import com.bottari.bottari.core.network.client.createHttpClient
 import com.bottari.bottari.core.network.service.MemberService
+import com.bottari.bottari.core.network.util.FirebaseInstallationIdProvider
 import de.jensklingenberg.ktorfit.Ktorfit
-import dev.zacsweers.metro.ContributesTo
+import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.Provides
+import dev.zacsweers.metro.SingleIn
 import io.ktor.client.HttpClient
 
-@ContributesTo(DataScope::class)
 interface NetworkGraph {
     @Provides
+    @SingleIn(AppScope::class)
     fun provideHttpClient(
         fidProvider: FirebaseInstallationIdProvider,
     ): HttpClient = createHttpClient(fidProvider)
 
     @Provides
+    @SingleIn(AppScope::class)
     fun provideKtrofit(
         client: HttpClient,
     ): Ktorfit =
@@ -28,8 +29,10 @@ interface NetworkGraph {
             .build()
 
     @Provides
+    @SingleIn(AppScope::class)
     fun provideMemberService(ktorfit: Ktorfit): MemberService = ktorfit.create<MemberService>()
 
     @Provides
+    @SingleIn(AppScope::class)
     fun provideFidProvider(): FirebaseInstallationIdProvider = FirebaseInstallationIdProvider()
 }

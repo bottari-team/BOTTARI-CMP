@@ -2,12 +2,12 @@ package com.bottari.bottari
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.bottari.bottari.core.di.ViewModelKey
 import com.bottari.bottari.core.domain.usecase.ObservePermissionFlagUseCase
 import com.bottari.bottari.core.domain.usecase.SavePermissionFlagUseCase
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesIntoMap
 import dev.zacsweers.metro.Inject
+import dev.zacsweers.metrox.viewmodel.ViewModelKey
 import io.github.aakira.napier.Napier
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow

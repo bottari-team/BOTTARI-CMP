@@ -32,9 +32,9 @@ kotlin {
 
     sourceSets {
         commonMain.dependencies {
-            implementation(projects.core.di)
             implementation(projects.core.data)
             implementation(projects.core.domain)
+            implementation(projects.core.common)
 
             implementation(libs.androidx.lifecycle.runtime.compose)
             implementation(libs.androidx.lifecycle.viewmodel.compose)

@@ -39,7 +39,6 @@ buildkonfig {
 kotlin {
     sourceSets {
         commonMain.dependencies {
-            implementation(projects.core.di)
             implementation(projects.core.model)
 
             implementation(libs.ktor.client.core)

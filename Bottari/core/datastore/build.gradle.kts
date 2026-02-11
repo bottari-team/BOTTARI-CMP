@@ -11,7 +11,6 @@ android.namespace = "com.bottari.bottari.core.datastore"
 kotlin {
     sourceSets {
         commonMain.dependencies {
-            implementation(projects.core.di)
             implementation(projects.core.model)
 
             implementation(libs.androidx.datastore)
