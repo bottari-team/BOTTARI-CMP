@@ -2,6 +2,8 @@ rootProject.name = "Bottari"
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 pluginManagement {
+    includeBuild("build-logic")
+
     repositories {
         google {
             mavenContent {
@@ -29,3 +31,13 @@ dependencyResolutionManagement {
 }
 
 include(":composeApp")
+include(":core:common")
+include(":core:data")
+include(":core:datastore")
+include(":core:designsystem")
+include(":core:domain")
+include(":core:model")
+include(":core:navigation")
+include(":core:network")
+include(":core:room")
+include(":core:ui")
